@@ -1,0 +1,7 @@
+cookie是否仅在http 请求时有效：默认false，表示都可以用
+
+- cookie在php中可以使用（获取），在js中也可以！
+
+- 这项设置，无非就是来决定是否允许js来使用php设置的cookie数据
+
+- setcookie("c2", "value2",  0, "/"，"www.example.com"，false， true );此时，该cookie只能有php来获取，js获取不到。
