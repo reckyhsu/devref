@@ -1,0 +1,5 @@
+Google 地址栏Tab站内搜索
+
+
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"http://react-china.org","potentialAction":{"@type":"SearchAction","target":"http://react-china.org/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="http://react-china.org/opensearch.xml">
