@@ -1,0 +1,11 @@
+private repo for composer through https
+
+vi ~/.composer/auth.json
+
+{
+    "bitbucket-oauth": {},
+    "github-oauth": {
+        "github.com": "PUT TOKEN HERE"},
+    "gitlab-oauth": {},
+    "http-basic": {}
+}
