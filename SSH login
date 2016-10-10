@@ -1,0 +1,13 @@
+SSH Login Without Key
+
+On Server run the following commands:
+##
+mkdir ~/.ssh
+cd ~/.ssh
+ssh-keygen -t rsa
+cp id_rsa.pub authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys 
+
+Generate key pair on Local PC, put id_rsa.pub on Target Server /.ssh, Generated the authorized_keys and set permission 600 
+
