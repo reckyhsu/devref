@@ -6,6 +6,16 @@ SELECT UNIX_TIMESTAMP(),NOW();
 
 SELECT DATE_SUB(NOW(),INTERVAL 30 DAY)
 
-mysqldump -u root -p db_name > xxx.sql
-gunzip -d xxx.sql.gz
-mysql -u root -p new_db_name < xxx.sql
+CREATE DATABASE `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+Method : 1
+mysqldump -u root -p -q --skip-extended-insert --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
+--OR--
+mysqldump -u root -p -q -e --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
+
+gunzip < db_name.sql.gz | mysql -u root db_name
+
+
+Method 2
+mysqldump -h source_db_server -u root -p -q -e db_name | gzip | gzip -d | mysql -u root db_name (one for export and import)
+
