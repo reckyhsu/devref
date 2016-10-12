@@ -5,3 +5,7 @@ SELECT DATE_FORMAT(UNIX_TIMESTAMP(),'%Y-%m-%d')
 SELECT UNIX_TIMESTAMP(),NOW();
 
 SELECT DATE_SUB(NOW(),INTERVAL 30 DAY)
+
+
+gunzip -d xxx.sql.gz
+mysql -u root -p new_db_name < xxx.sql
