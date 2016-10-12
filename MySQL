@@ -9,9 +9,11 @@ SELECT DATE_SUB(NOW(),INTERVAL 30 DAY)
 CREATE DATABASE `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 Method : 1
-mysqldump -u root -p -q --skip-extended-insert --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
+mysqldump -u root -p -q -R --skip-extended-insert --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
 --OR--
-mysqldump -u root -p -q -e --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
+mysqldump -u root -p -q -R -e --add-drop-table --single-transaction db_name | gzip > db_name.sql.gz
+
+** -R : --routines, stored procedure
 
 gunzip < db_name.sql.gz | mysql -u root db_name
 
