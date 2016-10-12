@@ -6,6 +6,6 @@ SELECT UNIX_TIMESTAMP(),NOW();
 
 SELECT DATE_SUB(NOW(),INTERVAL 30 DAY)
 
-
+mysqldump -u root -p db_name > xxx.sql
 gunzip -d xxx.sql.gz
 mysql -u root -p new_db_name < xxx.sql
