@@ -1,0 +1,31 @@
+Create your own private git reopo
+run php gitrepo.php project_name_abc
+//
+<?php
+/**
+ * File: gitrepo.php
+ */
+global $argv;
+define('DS', DIRECTORY_SEPARATOR); 
+
+if (isset($argv[1]) && ctype_alnum($argv[1])) {
+	$project_name = trim($argv[1]);
+} else {
+	exit("Invalid Project Name");
+}
+
+# check PATH settings
+
+if (!isset($_SERVER['DROPBOX_REPO_PATH'])) {
+	exit("Please set PATH for DROPBOX_REPO_PATH");
+}
+
+$project = $_SERVER['DROPBOX_REPO_PATH'].DS.'repos'.DS.$project_name.".git";
+
+# create repo
+if (!file_exists($project)) {
+	mkdir($project,0777,true);
+	shell_exec("cd $project && git init --bare");
+	echo "Repo Created!".PHP_EOL;
+}
+echo "Use $project as git repo path!".PHP_EOL;
