@@ -3,3 +3,9 @@
 { this.props.params.id }
 
 { this.props.location.query.id }
+
+传递路由参数
+Link: to, hash, query, activeClassName, actiyeStyle, onClick
+query={{q: "que"}}
+
+IndexLink 解决activeClassName的问题
