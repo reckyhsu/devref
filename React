@@ -9,3 +9,6 @@ Link: to, hash, query, activeClassName, actiyeStyle, onClick
 query={{q: "que"}}
 
 IndexLink 解决activeClassName的问题
+
+
+ES7 async/await
