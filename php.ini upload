@@ -1,0 +1,4 @@
+php -i | egrep '^upload_max_filesize|post_max_size'
+
+post_max_size => 15M => 15M
+upload_max_filesize => 15M => 15M
