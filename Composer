@@ -2,4 +2,4 @@ composer config -g -- disable-tls true
 
 composer config -g github-oauth '{"github.com": "asdfasdfasdfasdfasdfasdfasdf"}'
 
-echo '{}" > /root/.composer/auth.json
+echo "{}" > /root/.composer/auth.json
