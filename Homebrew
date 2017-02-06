@@ -1,0 +1,17 @@
+# install homebrew
+```$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+
+# install mysql
+```brew info mysql```
+```brew install mysql```
+
+# install brew services
+```brew tap homebrew/services```
+
+# start mysql service
+```brew services start mysql```
+```brew services list```
+```mysql -V```
+
+# mysql manage
+```mysqladmin -u root password 'passwordhere'```
