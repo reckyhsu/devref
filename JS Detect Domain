@@ -1,0 +1,28 @@
+Test Regx with http://www.example.com/domain.html?domain=www.facebook.com&gclid=some-string
+<script>
+  function getParameterByName(name) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  var domain = getParameterByName('domain');
+  var gclid = getParameterByName('gclid');
+  if (!gclid) {
+    gclid = 'undefined';
+  }
+  var refer_url = 'https://'+ domain +'/test.html';
+  console.log('Refer Url = ' + refer_url);
+
+
+  o = { channel:'', category:'', exp:0 }
+
+  if(/^https?:\/\/[a-z|A-Z|0-9]{0,10}\.?facebook\.com/i.test(refer_url)){o.channel='Facebook';o.category='socialmedia'}
+  else {o.channel='Undefined';o.category='other'}
+
+  console.log(o);
+</script>
