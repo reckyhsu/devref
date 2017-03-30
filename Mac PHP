@@ -18,3 +18,39 @@ brew install php71-igbinary
 
 sudo pkill php-fpm
 sudo /usr/local/Cellar/php71/7.1.3_15/sbin/php71-fpm start
+
+vi /usr/local/etc/php/7.1/php.ini
+
+[xdebug]
+zend_extension="/usr/local/opt/php71-xdebug/xdebug.so"
+
+;是否开启远程调试自动启动
+xdebug.remote_autostart = 1
+
+;是否开启远程调试
+xdebug.remote_enable = 1
+
+;允许调试的客户端IP
+#xdebug.remote_host = localhost
+
+;远程调试的端口（默认9000）
+xdebug.remote_port = 9000
+
+;调试插件dbgp
+xdebug.remote_handler = dbgp
+
+;是否收集变量
+xdebug.collect_vars = 1
+
+;是否收集返回值
+xdebug.collect_return = 1
+
+;是否收集参数
+xdebug.collect_params = 1
+
+;是否开启调试内容
+xdebug.profiler_enable=1
+
+xdebug.idekey = phpstorm
+
+https://www.jetbrains.com/help/phpstorm/2017.1/configuring-xdebug.html#d24663e21
