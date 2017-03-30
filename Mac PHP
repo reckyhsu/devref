@@ -11,5 +11,10 @@ brew install php71
 vi /usr/local/etc/php/7.1/php-fpm.d/www.conf
 -change user/group/listen, use reckyhsu/admin
 
+brew install php71-yaml
+brew install php71-xdebug
+brew install php71-redis
+brew install php71-igbinary
+
 sudo pkill php-fpm
 sudo /usr/local/Cellar/php71/7.1.3_15/sbin/php71-fpm start
