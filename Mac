@@ -1,0 +1,10 @@
+brew update
+brew upgrade
+
+brew unlink php70
+brew unlink php70-igbinary
+brew unlink php70-redis
+brew unlink php70-yaml
+brew unlink php70-xdebug
+
+brew install php71
