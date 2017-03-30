@@ -1,0 +1,15 @@
+brew update
+brew upgrade
+
+brew unlink php70
+brew unlink php70-igbinary
+brew unlink php70-redis
+brew unlink php70-yaml
+brew unlink php70-xdebug
+
+brew install php71
+vi /usr/local/etc/php/7.1/php-fpm.d/www.conf
+-change user/group/listen, use reckyhsu/admin
+
+sudo pkill php-fpm
+sudo /usr/local/Cellar/php71/7.1.3_15/sbin/php71-fpm start
