@@ -19,7 +19,7 @@ brew install php71-igbinary
 sudo pkill php-fpm
 sudo /usr/local/Cellar/php71/7.1.3_15/sbin/php71-fpm start
 
-vi /usr/local/etc/php/7.1/php.ini
+vi /usr/local/etc/php/7.1/conf.d/ext-xdebug.ini 
 
 [xdebug]
 zend_extension="/usr/local/opt/php71-xdebug/xdebug.so"
