@@ -15,6 +15,7 @@ brew install php71-yaml
 brew install php71-xdebug
 brew install php71-redis
 brew install php71-igbinary
+brew install php71-mcrypt
 
 sudo pkill php-fpm
 sudo /usr/local/Cellar/php71/7.1.3_15/sbin/php71-fpm start
