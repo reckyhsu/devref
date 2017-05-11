@@ -1,0 +1,39 @@
+// Install Selenium
+- http://selenium-release.storage.googleapis.com/index.html
+
+// Install Chrome Driver
+- https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+// Run Selenium Server
+- java -jar /usr/local/bin/selenium-server-standalone-2.44.0.jar > /tmp/selenium_server.log 2>&1 &
+
+--OR--
+
+- java -jar D:\selenium\selenium-server-standalone-2.44.0.jar  -port 8888 -Dwebdriver.chrome.driver="D:\selenium\chromedriver.exe"
+
+// Install PHP-driver
+- https://github.com/facebook/php-webdriver
+
+// Run php Code,
+<?php
+$wd_host = 'http://localhost:8888/wd/hub';
+$desired_capabilities = DesiredCapabilities::chrome();
+$driver = RemoteWebDriver::create($wd_host, $desired_capabilities);
+
+// auto login
+$driver->get('https://login.taobao.com/member/login.jhtml');
+$element = $driver->findElement(
+    WebDriverBy::name('TPL_username')
+);
+$element->clear(); //清空
+$element->sendKeys("yourusername");//自动填写淘宝用户名
+$element = $driver->findElement(
+    WebDriverBy::name('TPL_password')
+);
+$element->clear(); //清空
+$element->sendKeys("yourpassword");//自动填写淘宝密码
+$driver->findElement(WebDriverBy::id('J_SubmitStatic'))->click();
+
+$url = 'http://www.taobao.com/some-item-url';
+$driver->get($url);
+$html = $driver->getPageSource();
