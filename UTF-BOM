@@ -1,0 +1,8 @@
+    /*
+      / Validate input parameters
+     */
+
+    private static function remove_utfbom($string)
+    {
+        return (substr($string, 0, 3) == pack('CCC', 239, 187, 191)) ? substr($string, 3) : $string;
+    }
