@@ -1,0 +1,34 @@
+#### city-fan.org.repo
+
+[city-fan.org]
+name=city-fan.org repository for Red Hat Enterprise Linux (and clones) $releasever ($basearch)
+#baseurl=http://mirror.city-fan.org/ftp/contrib/yum-repo/rhel$releasever/$basearch
+mirrorlist=http://mirror.city-fan.org/ftp/contrib/yum-repo/mirrorlist-rhel$releasever
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-city-fan.org
+
+[city-fan.org-debuginfo]
+name=city-fan.org debuginfo repository for Red Hat Enterprise Linux (and clones) $releasever ($basearch)
+#baseurl=http://www.city-fan.org/ftp/contrib-debug/rhel$releasever/$basearch
+mirrorlist=http://www.city-fan.org/ftp/contrib-debug/mirrorlist-rhel$releasever
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-city-fan.org
+
+[city-fan.org-source]
+name=city-fan.org source repository for Red Hat Enterprise Linux (and clones) $releasever
+#baseurl=http://mirror.city-fan.org/ftp/contrib/yum-repo/rhel$releasever/source
+mirrorlist=http://mirror.city-fan.org/ftp/contrib/yum-repo/source-mirrorlist-rhel$releasever
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-city-fan.org
+
+
+#### ius.repo
+[ius]
+name=IUS Community Packages for Enterprise Linux 6 - $basearch
+baseurl=http://mirror.rackspace.com/ius/stable/Redhat/6/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
