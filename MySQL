@@ -24,3 +24,5 @@ gunzip < db_name.sql.gz | mysql -u root db_name
 Method 2
 mysqldump -h source_db_server -u root -p -q -e db_name | gzip | gzip -d | mysql -u root db_name (one for export and import)
 
+Functions and Procedure
+http://www.cnblogs.com/phpper/p/7361841.html
