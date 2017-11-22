@@ -1,0 +1,11 @@
+brew install python
+brew install python3
+sudo chown -R $(whoami) /usr/local
+sudo easy_install pip
+sudo easy_install pip3
+
+web scrape
+
+http://www.voidcn.com/article/p-easfjtuz-dk.html
+http://www.voidcn.com/article/p-uzqafsui-bav.html
+http://www.voidcn.com/search/fjnuuu
