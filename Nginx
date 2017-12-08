@@ -1,0 +1,38 @@
+/etc/nginx/php-fpm.conf
+
+# PHP-FPM FastCGI server
+# network or unix domain socket configuration
+
+    location ~ \.php$ {
+        expires off;
+        try_files $uri =404;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_intercept_errors on;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_index index.php;
+        fastcgi_buffers 256 16k;
+        fastcgi_read_timeout 600s;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        # fastcgi_param PHP_VALUE max_input_vars=100000; # big to handle big data files coming in via HTTP Post
+    }
+    
+    
+在 host.conf里面 添加
+
+include /etc/ningx/php-fpm.conf
+
+
+/etc/nginx/upstrem.conf
+
+upstream backend_servers {
+    server backend_server01:80 weight=5 backup;
+    server backend_server02:80 weight=10 max_fails=3 fail_timeout=30s;
+}
+在 nginx.conf 的http部分添加
+include upstream.conf;
+
+在 host.conf里面 添加
+
+location / {
+		proxy_pass http://backend_servers;
+}
