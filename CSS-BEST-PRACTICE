@@ -1,2 +1,5 @@
-标出没有添加alt属性的图片
+# 标出没有添加alt属性的图片
 img[alt=""],img:not([alt]) { border: 5px dashed #c00 }
+
+# 内容变模糊来提示注册
+filter: blur(5px);
