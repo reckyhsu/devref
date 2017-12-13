@@ -1,0 +1,62 @@
++ Ref
+- https://www.howtoforge.com/tutorial/how-to-install-tomcat-on-centos/
+- https://www.howtoing.com/how-to-install-apache-tomcat-8-on-centos-7
+- http://www.jianshu.com/p/6a9fa018b506
+- http://www.cnblogs.com/hanyinglong/p/5024643.html
+
++ Install Java
+$ rpm -ivh jdk-8u102-linux-i586.rpm
+$ vi /etc/profile.d/java.sh
+JAVA_HOME=/usr/java/jdk1.8.0_152/
+PATH=$JAVA_HOME/bin:$JAVA_HOME/jre:$PATH
+export PATH JAVA_HOME
+export CLASSPATH=.:$JAVA_HOME/lib
+$ chmod +x /etc/profile.d/java.sh
+
++ Install Tomcat
+$ tar -zxv -f apache-tomcat-8.0.29.tar.gz 
+$ mv apache-tomcat-8.0.29 /opt/tomcat
+$ vi /opt/tomcat/bin/setenv.sh
+#!/bin/bash
+#add tomcat pid
+CATALINA_PID="$CATALINA_BASE/temp/tomcat.pid"
+#add java opts
+JAVA_OPTS="-server -XX:MetaspaceSize=256M -XX:MaxMetaspaceSize=1024m -Xms512M -Xmx1024M -XX:MaxNewSize=256m"
+
+$ chmod +x /opt/tomcat/bin/setenv.sh
+
+
+
+$ vi /etc/profile.d/tomecat.sh
+export CATALINA_HOME=/opt/tomcat
+export CATALINA_BASE=/opt/tomcat
+export PATH=$PATH:$CATLINA_HOME:/bin
+
+$ vi /etc/systemd/system/tomcat.service
+
+
+# Systemd unit file for tomcat
+[Unit]
+Description=Apache Tomcat 8.5.24 Servlet Container
+After=syslog.target network.target
+
+[Service]
+User=tomcat
+Group=tomcat
+Type=forking
+Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+
+$ systemctl daemon-reload
+$ systemctl start tomcat.service
+
+$ firewall-cmd --zone=public --add-port=8080/tcp --permanent
+$ firewall-cmd --reload
