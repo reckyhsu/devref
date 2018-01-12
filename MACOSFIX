@@ -1,2 +1,5 @@
 ### ls: illegal option
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+
+已经在终端里输入了sudo spctl --master-disable 然后按回车键，可是再重新打开安全与隐私。 还是没有“任何来源”这一项
