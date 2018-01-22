@@ -36,3 +36,16 @@ include upstream.conf;
 location / {
 		proxy_pass http://backend_servers;
 }
+
+
+Location 配置
+location [=|~|~*|^~] /uri/ { … } 
+
+=   #表示精确匹配
+^~  #表示uri以某个常规字符串开头，理解为匹配 url路径即可。nginx不对url做编码，因此请求为/static/20%/aa，可以被规则^~ /static/ /aa匹配到（注意是空格）。
+~   #表示区分大小写的正则匹配
+~*  #表示不区分大小写的正则匹配
+!~  #表示区分大小写不匹配
+!~* #不区分大小写不匹配
+/   #通用匹配,任何请求都会匹配到
+@   #用于定义一个Location块，且该块不能被外部Client所访问，只能被Nginx 内部配置指令所访问，比如 try_files 或 error_page
