@@ -49,3 +49,5 @@ location [=|~|~*|^~] /uri/ { … }
 !~* #不区分大小写不匹配
 /   #通用匹配,任何请求都会匹配到
 @   #用于定义一个Location块，且该块不能被外部Client所访问，只能被Nginx 内部配置指令所访问，比如 try_files 或 error_page
+
+想要验证nginx走了那条location，最简单就是在location返回不同的编号来debug，例如 return 901;
