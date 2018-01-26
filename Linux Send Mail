@@ -1,0 +1,7 @@
+```
+echo "这里输入你邮件内容" | mail -s "邮件标题" -a file.txt hadoop@iteblog.com
+```
+
+```
+mail -s "邮件标题" -a file.txt hadoop@iteblog.com < message.txt
+```
