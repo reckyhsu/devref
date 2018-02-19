@@ -1,0 +1,33 @@
+
+http://echarts.baidu.com/examples/editor.html?c=line-smooth
+
+option = {
+    legend: {
+        data: ['销量预测','销量实际'],
+        bottom: 0,
+        height: 100
+    },
+    title: {
+        text: '图标实例演示图'
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        name: '销量预测',
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line',
+        smooth: true
+    },
+    {
+        name: '销量实际',
+        data: [1220, 942, 701, 924, 1490, 1350, 1350],
+        type: 'line',
+        smooth: true
+    }]
+};
