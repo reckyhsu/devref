@@ -1,0 +1,18 @@
+MySQL sync
+
+
+#!/bin/sh
+
+SOURCE_HOST=192.168.3.5
+SOURCE_USER=user
+SOURCE_PASS=pass
+
+TARGET_HOST=192.168.3.10
+TARGET_USER=user
+TARGET_PASS=pass
+
+
+DATABSE="" # set dbname here
+TABLES="" # empty to import all tables
+#TABLES="user program program__account click__logs"
+mysqldump -h $SOURCE_HOST -u $SOURCE_USER -p$SOURCE_PASS -q -R -e --opt --add-drop-table --single-transaction $DATABSE $TABLES | gzip | gzip -d | mysql -h $TARGET_HOST -u $TARGET_USER -p$TARGET_PASS $DATABSE
