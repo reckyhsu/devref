@@ -7,6 +7,9 @@ brew unlink php70-redis
 brew unlink php70-yaml
 brew unlink php70-xdebug
 
+brew cleanup
+brew prune
+
 brew install/uninstall/reinstall php71
 vi /usr/local/etc/php/7.1/php-fpm.d/www.conf
 -change user/group/listen, use reckyhsu/admin
@@ -62,6 +65,7 @@ xcode-select --install
 sudo port -v selfupdate
 sudo port upgrade outdated
 sudo port install php72-yaml
+echo "extension=\"/opt/local/lib/php72/extensions/no-debug-non-zts-20170718/yaml.so\"" > php72/conf.d/ext-yaml.ini
 
 MacPorts使用
 更新ports tree和MacPorts版本，强烈推荐第一次运行的时候使用-v参数，显示详细的更新过程。
