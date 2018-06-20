@@ -56,3 +56,31 @@ xdebug.profiler_enable=1
 xdebug.idekey = phpstorm
 
 https://www.jetbrains.com/help/phpstorm/2017.1/configuring-xdebug.html#d24663e21
+
+# MacPort - install mackport
+xcode-select --install
+sudo port -v selfupdate
+sudo port upgrade outdated
+sudo port install php72-yaml
+
+MacPorts使用
+更新ports tree和MacPorts版本，强烈推荐第一次运行的时候使用-v参数，显示详细的更新过程。
+sudo port -v selfupdate
+
+搜索索引中的软件
+port search name
+
+安装新软件
+sudo port install name
+
+卸载软件
+sudo port uninstall name
+
+查看有更新的软件以及版本
+port outdated
+
+升级可以更新的软件
+sudo port upgrade outdated
+
+Eclipse的插件需要subclipse需要JavaHL，下面通过MacPorts来安装
+sudo port install subversion-javahlbindings
