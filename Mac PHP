@@ -7,7 +7,7 @@ brew unlink php70-redis
 brew unlink php70-yaml
 brew unlink php70-xdebug
 
-brew install/uninstall php71
+brew install/uninstall/reinstall php71
 vi /usr/local/etc/php/7.1/php-fpm.d/www.conf
 -change user/group/listen, use reckyhsu/admin
 
