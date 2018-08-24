@@ -90,3 +90,8 @@ sudo port upgrade outdated
 
 Eclipse的插件需要subclipse需要JavaHL，下面通过MacPorts来安装
 sudo port install subversion-javahlbindings
+
+
+Nginx 配置
+/usr/local/etc/nginx/nginx.conf
+/usr/local/etc/nginx/servers/*.conf
