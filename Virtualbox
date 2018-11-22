@@ -1,0 +1,1 @@
+vboxmanage modifyvm "win7x64" --vram 256
