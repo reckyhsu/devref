@@ -1,5 +1,8 @@
 https://www.macports.org/ 更好用
 
+sudo port install nginx@1.15.7 
+sudo port load nginx
+
 brew update
 brew upgrade
 
