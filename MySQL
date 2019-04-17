@@ -38,10 +38,15 @@ order by data_length desc;
 
 查询单个库中所有表磁盘占用大小的SQL语句：
 
+CREATE DEFINER=`root`@`%` PROCEDURE `dbsize`(var_dbname varchar(20))
+BEGIN
+set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 select TABLE_NAME, concat(truncate(data_length/1024/1024,2),' MB') as data_size,
 concat(truncate(index_length/1024/1024,2),' MB') as index_size
-from information_schema.tables where TABLE_SCHEMA = 'TestDB'
+from information_schema.tables where TABLE_SCHEMA = var_dbname
 group by TABLE_NAME
 order by data_length desc;
+
+END
 
 以上语句测试有效，注意替换以上的TestDB为数据库名
