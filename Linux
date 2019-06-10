@@ -6,3 +6,6 @@ zip -r -9 aclids_sample.zip ./aclids
 
 # count files including subfolder
 find /bigdisk/track/aclids -type f | wc -l
+
+# kill process according to name
+ps -ef | grep pullservice | grep -v grep | cut -c 9-15 | xargs kill -s 9
