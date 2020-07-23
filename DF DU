@@ -7,3 +7,4 @@ du
 http://www.cnblogs.com/peida/archive/2012/12/10/2810755.html
 
 du -s
+du -sh ~/.local 显示总的大小
