@@ -30,11 +30,11 @@ http://www.cnblogs.com/phpper/p/7361841.html
 
 查询所有数据库占用磁盘空间大小的SQL语句：
 
-select TABLE_SCHEMA, concat(truncate(sum(data_length)/1024/1024,2),' MB') as data_size,
-concat(truncate(sum(index_length)/1024/1024,2),'MB') as index_size
-from information_schema.tables
-group by TABLE_SCHEMA
-order by data_length desc;
+SELECT TABLE_SCHEMA, CONCAT(TRUNCATE(SUM(data_length)/1024/1024,2),' MB') AS data_size,
+CONCAT(TRUNCATE(SUM(index_length)/1024/1024,2),'MB') AS index_size
+FROM information_schema.tables
+GROUP BY TABLE_SCHEMA,data_length, index_length
+ORDER BY data_length DESC, index_size DESC, TABLE_SCHEMA;
 
 查询单个库中所有表磁盘占用大小的SQL语句：
 
