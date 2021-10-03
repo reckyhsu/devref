@@ -9,3 +9,10 @@ find /bigdisk/track/aclids -type f | wc -l
 
 # kill process according to name
 ps -ef | grep pullservice | grep -v grep | cut -c 9-15 | xargs kill -s 9
+
+# find big file
+find . -type f -size +800M  -print0 | xargs -0 ls -l
+find . -type f -size +800M  -print0 | xargs -0 du -h | sort -nr
+
+# df du
+https://blog.csdn.net/CL_YD/article/details/79458092
