@@ -6,6 +6,6 @@
 curl -s "https://laravel.build/example-app?with=mysql,redis" | bash
 mv example-app/* ./
 mv example-app/.* ./
-rm example-app
+rm -rf example-app
 
 ./vendor/bin/sail up
