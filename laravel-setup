@@ -4,8 +4,7 @@
 # composer create-project laravel/laravel example-app
 
 curl -s "https://laravel.build/example-app?with=mysql,redis" | bash
-mv * ../
+mv example-app/* ./
 rm example-app
 
-cd ../
 ./vendor/bin/sail up
