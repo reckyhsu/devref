@@ -1,0 +1,11 @@
+#!/bin/bash
+# copy this file to build.sh
+# sh build.sh
+# composer create-project laravel/laravel example-app
+
+curl -s "https://laravel.build/example-app?with=mysql,redis" | bash
+mv * ../
+rm example-app
+
+cd ../
+./vendor/bin/sail up
