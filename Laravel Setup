@@ -1,5 +1,5 @@
 #!/bin/bash
-# copy this file to build.sh
+# copy this file to build.sh in linux / WSL
 # composer create-project laravel/laravel example-app
 # -- or --
 # curl -s "https://laravel.build/example-app?with=mysql,redis,pgsql,mariadb,memcached,melisearch,minio,mailpit,selecnium,soketi" | bash
