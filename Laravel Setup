@@ -17,5 +17,11 @@ mv example-app/.* ./
 rm -rf example-app
 composer install
 
+# in windows
+php artisan sail:install
+php artisan sail:add mysql
+php artisan sail:add redis
+./scripts/wsl-init.sh
+
 --- always use sail artisan --- instead of php artisan
-./vendor/bin/sail up
+#./vendor/bin/sail up
