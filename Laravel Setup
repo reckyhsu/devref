@@ -2,10 +2,16 @@
 # copy this file to build.sh in linux / WSL
 # composer create-project laravel/laravel example-app
 # -- or --
+# on Mac
 # curl -s "https://laravel.build/example-app?with=mysql,redis,pgsql,mariadb,memcached,melisearch,minio,mailpit,selecnium,soketi" | bash
+# on Windows (sail may have issues)
+# curl -s https://laravel.build/example-app | bash
+# on Linux
+# curl -s https://laravel.build/example-app | bash
 # sh build.sh
 mv example-app/* ./
 mv example-app/.* ./
 rm -rf example-app
 
+--- always use sail artisan --- instead of php artisan
 ./vendor/bin/sail up
