@@ -9,6 +9,7 @@
 # on Linux
 # curl -s https://laravel.build/example-app | bash
 # sh build.sh
+wsl # (if you are in windows) 
 mv example-app/* ./
 mv example-app/.* ./
 rm -rf example-app
