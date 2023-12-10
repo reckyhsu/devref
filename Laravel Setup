@@ -9,10 +9,13 @@
 # on Linux
 # curl -s https://laravel.build/example-app | bash
 # sh build.sh
-wsl # (if you are in windows) 
+wsl # (if you are in windows)
+rm -rf example-app/vendor
+rm -rf example-app/composer.lock
 mv example-app/* ./
 mv example-app/.* ./
 rm -rf example-app
+composer install
 
 --- always use sail artisan --- instead of php artisan
 ./vendor/bin/sail up
