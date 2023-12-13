@@ -15,7 +15,18 @@ rm -rf example-app/composer.lock
 mv example-app/* ./
 mv example-app/.* ./
 rm -rf example-app
+
+# add laravel-nova
+composer config repositories.nova '{"type": "composer", "url": "https://nova.laravel.com"}' --file composer.json
+composer require laravel/nova
 composer install
+
+composer update --prefer-dist
+php artisan nova:install
+php artisan migrate
+
+php artisan nova:user
+php artisan nova:publish --force # reset nova
 
 # in windows
 php artisan sail:install
