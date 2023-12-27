@@ -36,3 +36,6 @@ php artisan sail:add redis
 
 --- always use sail artisan --- instead of php artisan
 #./vendor/bin/sail up
+
+Composer for private repo
+https://docs.pantheon.io/guides/integrated-composer/private-repo-package
