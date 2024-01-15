@@ -47,4 +47,5 @@ https://docs.pantheon.io/guides/integrated-composer/private-repo-package
 - laravel-socilite, oauth client
 - laravel-sanctum, api with token, jwt
 - laravel-nova, backend panel
+- laravel-horizon, redis queue
 
