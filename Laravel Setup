@@ -39,3 +39,12 @@ php artisan sail:add redis
 
 Composer for private repo
 https://docs.pantheon.io/guides/integrated-composer/private-repo-package
+
+# packages
+- laravel-framework, no user auth
+- laravel-fortify, headless auth as backend
+- laravel-passport, oauth, server+client
+- laravel-socilite, oauth client
+- laravel-sanctum, api with token, jwt
+- laravel-nova, backend panel
+
